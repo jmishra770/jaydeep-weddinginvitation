@@ -1,0 +1,151 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+background:#0b0907;
+font-family:Georgia, serif;
+color:#f5d78e;
+overflow-x:hidden;
+}
+
+.hero{
+height:100vh;
+background:
+linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.75)),
+url("photos/photo4.jpeg");
+
+background-size:cover;
+background-position:center;
+
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+}
+
+.overlay{
+background:rgba(0,0,0,.55);
+padding:40px;
+border-radius:20px;
+backdrop-filter:blur(4px);
+}
+
+.hero h1{
+font-size:4rem;
+margin:15px 0;
+}
+
+.date{
+font-size:1.3rem;
+margin-bottom:25px;
+}
+
+.btn{
+display:inline-block;
+padding:15px 30px;
+background:#d4af37;
+color:#000;
+font-weight:bold;
+text-decoration:none;
+border-radius:40px;
+transition:.3s;
+}
+
+.btn:hover{
+transform:scale(1.05);
+box-shadow:0 0 20px #d4af37;
+}
+
+#invitation{
+max-width:1000px;
+margin:auto;
+padding:40px 20px;
+}
+
+.card{
+background:#18120c;
+border:1px solid #d4af37;
+padding:30px;
+margin:25px 0;
+border-radius:20px;
+text-align:center;
+box-shadow:0 0 20px rgba(212,175,55,.15);
+}
+
+.card h2{
+margin-bottom:15px;
+}
+
+.invitation h1{
+margin:15px 0;
+}
+
+#countdown{
+font-size:2rem;
+font-weight:bold;
+}
+
+.gallery-title{
+text-align:center;
+margin-top:40px;
+}
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+margin-top:25px;
+}
+
+.gallery img{
+width:100%;
+height:350px;
+object-fit:cover;
+border-radius:15px;
+border:2px solid #d4af37;
+transition:.4s;
+}
+
+.gallery img:hover{
+transform:scale(1.03);
+}
+
+.footer{
+text-align:center;
+padding:60px 20px;
+}
+
+.footer h2{
+margin:15px 0;
+}
+
+.particles{
+position:fixed;
+width:100%;
+height:100%;
+pointer-events:none;
+background-image:
+radial-gradient(#d4af37 1px, transparent 1px);
+background-size:40px 40px;
+opacity:.12;
+}
+.music-btn{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#d4af37;
+color:#000;
+border:none;
+padding:12px 20px;
+border-radius:30px;
+font-weight:bold;
+cursor:pointer;
+z-index:9999;
+}
