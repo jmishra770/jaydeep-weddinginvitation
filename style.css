@@ -141,6 +141,20 @@ body {
     max-width: 1000px;
     margin: auto;
     padding: 40px 20px;
+    position: relative;
+}
+
+#invitation::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background:
+        linear-gradient(rgba(11, 9, 7, 0.65), rgba(11, 9, 7, 0.82)),
+        url("photos/photo6.jpeg");
+    background-size: 60%;
+    background-position: top center;
+    background-attachment: fixed;
+    z-index: -1;
 }
 
 /* ========================= */
