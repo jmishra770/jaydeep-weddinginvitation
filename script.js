@@ -1,4 +1,26 @@
 // =========================
+// Page Load Fix
+// =========================
+
+window.history.scrollRestoration = "manual";
+
+window.addEventListener("load", () => {
+
+    window.scrollTo(0, 0);
+
+    if (window.location.hash === "#invitation") {
+
+        history.replaceState(
+            null,
+            null,
+            window.location.pathname
+        );
+
+    }
+
+});
+
+// =========================
 // Wedding Countdown
 // =========================
 
@@ -7,15 +29,23 @@ const countdown = document.getElementById("countdown");
 function updateCountdown() {
 
     const weddingDate = new Date("2026-06-24T13:00:00").getTime();
+
     const now = new Date().getTime();
+
     const distance = weddingDate - now;
 
     if (distance < 0) {
-        countdown.innerHTML = "🎉 Wedding Day Has Arrived!";
+
+        countdown.innerHTML =
+            "🎉 Wedding Day Has Arrived!";
+
         return;
+
     }
 
-    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const days = Math.floor(
+        distance / (1000 * 60 * 60 * 24)
+    );
 
     const hours = Math.floor(
         (distance % (1000 * 60 * 60 * 24))
@@ -34,29 +64,34 @@ function updateCountdown() {
 
     countdown.innerHTML =
         `${days} Days ${hours} Hours ${minutes} Minutes ${seconds} Seconds`;
+
 }
 
 updateCountdown();
+
 setInterval(updateCountdown, 1000);
 
-
 // =========================
 // Music Player
 // =========================
-
-// Music Player
 
 const music = document.getElementById("bgMusic");
-const musicBtn = document.getElementById("musicBtn");
-const openInvite = document.getElementById("openInvite");
+
+const musicBtn =
+    document.getElementById("musicBtn");
+
+const openInvite =
+    document.getElementById("openInvite");
 
 let playing = false;
 
-// Auto start when invitation opens
+// Open Invitation
 
-if (openInvite) {
+openInvite.addEventListener(
+    "click",
+    async (e) => {
 
-    openInvite.addEventListener("click", async () => {
+        e.preventDefault();
 
         try {
 
@@ -64,23 +99,29 @@ if (openInvite) {
 
             playing = true;
 
-            musicBtn.innerHTML = "🔇 Music OFF";
+            musicBtn.innerHTML =
+                "🔇 Music OFF";
 
-        } catch (error) {
+        } catch (err) {
 
-            console.log("Autoplay blocked:", error);
+            console.log(err);
 
         }
 
-    });
+        document
+            .getElementById("invitation")
+            .scrollIntoView({
+                behavior: "smooth"
+            });
 
-}
+    }
+);
 
-// Music Toggle Button
+// Music Toggle
 
-if (musicBtn) {
-
-    musicBtn.addEventListener("click", async () => {
+musicBtn.addEventListener(
+    "click",
+    async () => {
 
         try {
 
@@ -88,7 +129,8 @@ if (musicBtn) {
 
                 music.pause();
 
-                musicBtn.innerHTML = "🎵 Music ON";
+                musicBtn.innerHTML =
+                    "🎵 Music ON";
 
                 playing = false;
 
@@ -96,7 +138,8 @@ if (musicBtn) {
 
                 await music.play();
 
-                musicBtn.innerHTML = "🔇 Music OFF";
+                musicBtn.innerHTML =
+                    "🔇 Music OFF";
 
                 playing = true;
 
@@ -108,6 +151,45 @@ if (musicBtn) {
 
         }
 
+    }
+);
+
+// =========================
+// Gallery Modal
+// =========================
+
+const modal =
+    document.getElementById("photoModal");
+
+const modalImg =
+    document.getElementById("modalImg");
+
+const images =
+    document.querySelectorAll(".gallery img");
+
+const closeBtn =
+    document.querySelector(".close");
+
+images.forEach((img) => {
+
+    img.addEventListener("click", () => {
+
+        modal.style.display = "block";
+
+        modalImg.src = img.src;
+
     });
 
-}
+});
+
+closeBtn.addEventListener("click", () => {
+
+    modal.style.display = "none";
+
+});
+
+modal.addEventListener("click", () => {
+
+    modal.style.display = "none";
+
+});
