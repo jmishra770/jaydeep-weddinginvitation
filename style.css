@@ -48,9 +48,13 @@ body{
     margin:15px 0;
 }
 
+.hero h3{
+    margin-bottom:15px;
+}
+
 .date{
     font-size:1.3rem;
-    margin-bottom:25px;
+    margin-bottom:15px;
 }
 
 @keyframes fadeUp{
@@ -75,6 +79,7 @@ body{
     text-decoration:none;
     border-radius:40px;
     transition:.3s;
+    margin-top:15px;
 }
 
 .btn:hover{
@@ -112,6 +117,10 @@ body{
     margin-bottom:15px;
 }
 
+.card p{
+    line-height:1.8;
+}
+
 .invitation h1{
     margin:15px 0;
 }
@@ -121,6 +130,7 @@ body{
 #countdown{
     font-size:2rem;
     font-weight:bold;
+    line-height:1.5;
 }
 
 /* Gallery */
@@ -128,6 +138,7 @@ body{
 .gallery-title{
     text-align:center;
     margin-top:40px;
+    margin-bottom:20px;
 }
 
 .gallery{
@@ -139,8 +150,7 @@ body{
 
 .gallery img{
     width:100%;
-    height:350px;
-    object-fit:cover;
+    height:auto;
     border-radius:15px;
     border:2px solid #d4af37;
     transition:.4s;
@@ -223,9 +233,10 @@ body{
     font-weight:bold;
     cursor:pointer;
     z-index:9999;
+    box-shadow:0 0 15px rgba(212,175,55,.4);
 }
 
-/* Mobile */
+/* Mobile Responsive */
 
 @media(max-width:768px){
 
@@ -233,16 +244,34 @@ body{
         font-size:2.4rem;
     }
 
+    .hero h3{
+        font-size:1rem;
+    }
+
     .overlay{
         padding:25px;
+        width:90%;
+    }
+
+    .date{
+        font-size:1.1rem;
     }
 
     #countdown{
         font-size:1.2rem;
     }
 
+    .card{
+        padding:20px;
+    }
+
+    .gallery{
+        grid-template-columns:1fr;
+    }
+
     .gallery img{
-        height:280px;
+        width:100%;
+        height:auto;
     }
 
     .music-btn{
