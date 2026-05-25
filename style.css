@@ -376,8 +376,10 @@ body {
     }
 
     .gallery img {
-        height: auto;
-        max-height: 350px;
+        height: auto;          /* Let height be natural */
+        max-height: none;      /* Remove the 350px cap */
+        object-fit: contain;   /* Show full image, no cropping */
+        background: #18120c;   /* Fill letterbox bars with your card bg color */
     }
 
     .music-btn {
