@@ -401,3 +401,41 @@ body {
         font-size: 35px;
     }
 }
+/* ========================= */
+/* Gold Dividers             */
+/* ========================= */
+
+.card::after {
+    content: "✦ ── ✦ ── ✦";
+    display: block;
+    text-align: center;
+    color: #d4af37;
+    font-size: 0.85rem;
+    margin-top: 20px;
+    opacity: 0.5;
+    letter-spacing: 4px;
+    animation: shimmerDivider 3s ease-in-out infinite;
+}
+
+@keyframes shimmerDivider {
+    0%, 100% { opacity: 0.35; }
+    50% { opacity: 0.75; }
+}
+
+/* ========================= */
+/* Typewriter Cursor         */
+/* ========================= */
+.hero h1 span::after {
+    content: "|";
+    animation: blink 0.75s step-end infinite;
+    color: #d4af37;
+}
+
+.hero h1 span.done::after {
+    display: none;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
