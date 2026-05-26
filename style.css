@@ -26,7 +26,7 @@ body {
     overflow: hidden;
     background:
         linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.75)),
-        url("photos/photo4.jpeg");
+        url("photos/photo2.jpeg");
     background-size: cover;
     background-position: center;
     display: flex;
@@ -150,7 +150,7 @@ body {
     inset: 0;
     background:
         linear-gradient(rgba(11, 9, 7, 0.65), rgba(11, 9, 7, 0.82)),
-        url("photos/photo6.jpeg");
+        url("photos/photo2.jpeg");
     background-size: 60%;
     background-position: top center;
     background-attachment: fixed;
